@@ -4,6 +4,8 @@ import "./App.css";
 import GraficoDeArea from "./components/GraficoDeArea";
 import GraficoDeBarra from "./components/GraficoDeBarra";
 import GraficoDeBolha from "./components/GraficoDeBolha";
+import GraficoDeLinha from "./components/GraficoDeLinha";
+import GraficoDePizza from "./components/GraficoDePizza";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <GraficoDeArea />
       <GraficoDeBarra />
       <GraficoDeBolha />
+      <GraficoDePizza />
+      <GraficoDeLinha />
     </div>
   );
 }
