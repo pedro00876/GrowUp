@@ -1,5 +1,8 @@
 import "./App.css";
+
+//Componentes
 import GraficoDeArea from "./components/GraficoDeArea";
+import GraficoDeBarra from "./components/GraficoDeBarra";
 
 function App() {
   return (
@@ -7,6 +10,7 @@ function App() {
       <h1>GrowUp</h1>
 
       <GraficoDeArea />
+      <GraficoDeBarra />
     </div>
   );
 }
