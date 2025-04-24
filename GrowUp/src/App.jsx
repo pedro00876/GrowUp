@@ -3,6 +3,7 @@ import "./App.css";
 //Componentes
 import GraficoDeArea from "./components/GraficoDeArea";
 import GraficoDeBarra from "./components/GraficoDeBarra";
+import GraficoDeBolha from "./components/GraficoDeBolha";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
 
       <GraficoDeArea />
       <GraficoDeBarra />
+      <GraficoDeBolha />
     </div>
   );
 }
