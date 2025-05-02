@@ -1,6 +1,7 @@
+import CustomChart from "./CustomChart";
+
 import React from "react";
 import { Line } from "react-chartjs-2";
-//
 import { faker } from "@faker-js/faker";
 
 import {
@@ -30,7 +31,7 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-        //
+      //
       position: "top",
     },
     title: {
@@ -60,6 +61,14 @@ const GraficoDeArea = () => {
   return (
     <div>
       <Line options={options} data={data} />
+
+      <CustomChart
+        data={data}
+        options={options}
+        width="80%" // ou "500px"
+        height="300px"
+        position="relative"
+      />
     </div>
   );
 };
