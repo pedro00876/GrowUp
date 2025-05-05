@@ -1,4 +1,5 @@
 import React from "react";
+import { Rnd } from "react-rnd";
 import { Line } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
 
@@ -44,14 +45,14 @@ export const data = {
     {
       label: "Dataset 1",
       data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
+      borderColor: "#FF0000",
+      backgroundColor: "#FF0000",
     },
     {
       label: "Dataset 2",
       data: labels.map(() => faker.number.int({ min: -1000, max: 1000 })),
-      borderColor: "rgb(53, 162, 235)",
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      borderColor: "#0000FF",
+      backgroundColor: "#0000FF",
     },
   ],
 };
@@ -59,7 +60,18 @@ export const data = {
 const GraficoDeLinha = () => {
   return (
     <div>
-      <Line options={options} data={data} />
+      <Rnd
+        default={{
+          x: 100,
+          y: 100,
+          width: 500,
+          height: 300,
+        }}
+        bounds="window"
+        style={{ border: "1px solid #ccc", background: "#fff", padding: 10 }}
+      >
+        <Line options={options} data={data} />
+      </Rnd>
     </div>
   );
 };

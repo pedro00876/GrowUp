@@ -1,4 +1,5 @@
 import React from "react";
+import { Rnd } from "react-rnd";
 import { PolarArea } from "react-chartjs-2";
 
 import {
@@ -14,7 +15,7 @@ ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 export const data = {
   labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
   datasets: [
-    {
+    +{
       label: "# of Votes",
       data: [12, 19, 3, 5, 2, 3],
       backgroundColor: [
@@ -33,7 +34,20 @@ export const data = {
 const GraficoDeAreaPolar = () => {
   return (
     <div>
-      <PolarArea data={data} />
+      <Rnd
+        default={{
+          x: 100,
+          y: 100,
+          width: 500,
+          height: 300,
+        }}
+        bounds="window"
+        style={{ border: "1px solid #ccc", background: "#fff", padding: 10 }}
+      >
+        <PolarArea data={data} />
+      </Rnd>
+
+  
     </div>
   );
 };

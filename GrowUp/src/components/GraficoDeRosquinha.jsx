@@ -1,6 +1,7 @@
 import React from "react";
+import { Rnd } from "react-rnd";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import { Pie } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -11,12 +12,12 @@ export const data = {
       label: "# of Votes",
       data: [12, 19, 3, 5, 2, 3],
       backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
+        "#FF0000",
+        "#0000FF",
+        "#FFFF00",
+        "#008000",
+        "#800080",
+        "#FFA500",
       ],
       borderColor: [
         "rgba(255, 99, 132, 1)",
@@ -30,13 +31,23 @@ export const data = {
     },
   ],
 };
-
-const GraficoDePizza = () => {
+const GraficoDeRosquinha = () => {
   return (
     <div>
-      <Pie data={data} />
+      <Rnd
+        default={{
+          x: 100,
+          y: 100,
+          width: 500,
+          height: 300,
+        }}
+        bounds="window"
+        style={{ border: "1px solid #ccc", background: "#fff", padding: 10 }}
+      >
+        <Doughnut data={data} />
+      </Rnd>
     </div>
   );
 };
 
-export default GraficoDePizza;
+export default GraficoDeRosquinha;

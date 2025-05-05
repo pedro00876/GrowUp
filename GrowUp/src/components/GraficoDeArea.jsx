@@ -1,6 +1,5 @@
-import CustomChart from "./CustomChart";
-
 import React from "react";
+import { Rnd } from "react-rnd";
 import { Line } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
 
@@ -60,15 +59,18 @@ export const data = {
 const GraficoDeArea = () => {
   return (
     <div>
-      <Line options={options} data={data} />
-
-      <CustomChart
-        data={data}
-        options={options}
-        width="80%" // ou "500px"
-        height="300px"
-        position="relative"
-      />
+      <Rnd
+        default={{
+          x: 100,
+          y: 100,
+          width: 500,
+          height: 300,
+        }}
+        bounds="window"
+        style={{ border: "1px solid #ccc", background: "#fff", padding: 10 }}
+      >
+        <Line options={options} data={data} />
+      </Rnd>
     </div>
   );
 };

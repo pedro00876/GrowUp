@@ -1,4 +1,5 @@
 import React from "react";
+import { Rnd } from "react-rnd";
 import { Bar } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
 
@@ -42,12 +43,12 @@ export const data = {
     {
       label: "Dataset 1",
       data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
+      backgroundColor: "#FF0000",
     },
     {
       label: "Dataset 2",
       data: labels.map(() => faker.number.int({ min: 0, max: 1000 })),
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
+      backgroundColor: "#0000FF",
     },
   ],
 };
@@ -55,7 +56,18 @@ export const data = {
 const GraficoDeBarra = () => {
   return (
     <div>
-      <Bar options={options} data={data} />
+      <Rnd
+        default={{
+          x: 100,
+          y: 100,
+          width: 500,
+          height: 300,
+        }}
+        bounds="window"
+        style={{ border: "1px solid #ccc", background: "#fff", padding: 10 }}
+      >
+        <Bar options={options} data={data} />
+      </Rnd>
     </div>
   );
 };
