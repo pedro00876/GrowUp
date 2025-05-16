@@ -1,4 +1,6 @@
 import "./App.css";
+import ChartFromAPI from "./components/ChartFromAPI";
+import DynamicTable from "./components/DynamicTable";
 
 //Componentes
 import GraficoDeArea from "./components/GraficoDeArea";
@@ -11,12 +13,14 @@ function App() {
   return (
     <div className="App">
       <h1>GrowUp</h1>
+      <ChartFromAPI />
+      <DynamicTable />
 
-      <GraficoDeArea />
+      {/* <GraficoDeArea />
       <GraficoDeBarra />
       <GraficoDeLinha />
       <GraficoDeAreaPolar />
-      <GraficoDeRosquinha />
+      <GraficoDeRosquinha /> */}
     </div>
   );
 }
