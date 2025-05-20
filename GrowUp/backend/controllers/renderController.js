@@ -1,7 +1,7 @@
 const { buildChartConfig } = require('../utils/chartBuilder');
 const { buildTableConfig } = require('../utils/tableBuilder');
 
-exports.renderHandler = (req, res) => {
+exports.renderHandler = async (req, res) => {
   const payload = req.body;
 
   if (!payload.type) {
@@ -10,10 +10,10 @@ exports.renderHandler = (req, res) => {
 
   try {
     if (payload.type === 'chart') {
-      const chartConfig = buildChartConfig(payload);
+      const chartConfig = await buildChartConfig(payload);
       return res.json(chartConfig);
     } else if (payload.type === 'table') {
-      const tableConfig = buildTableConfig(payload);
+      const tableConfig = await buildTableConfig(payload);
       return res.json(tableConfig);
     } else {
       return res.status(400).json({ error: 'Tipo inválido. Use "chart" ou "table".' });

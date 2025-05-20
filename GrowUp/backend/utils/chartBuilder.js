@@ -1,57 +1,161 @@
-const defaultColors = [
-  'rgba(255, 99, 132, 0.6)',
-  'rgba(54, 162, 235, 0.6)',
-  'rgba(255, 206, 86, 0.6)',
-  'rgba(75, 192, 192, 0.6)',
-  'rgba(153, 102, 255, 0.6)',
-  'rgba(255, 159, 64, 0.6)'
-];
+async function buildChartConfig(payload) {
+  const dataset = payload.dataset;
+  const chartType = payload.chartType || 'bar';
+  const title = payload.title || '';
 
-function formatValue(formatType, value) {
-  if (!formatType) return value;
+  const response = await fetch('http://localhost:3000/data');
+  const data = await response.json();
 
-  switch (formatType) {
-    case 'currency':
-      return `R$ ${parseFloat(value).toFixed(2).replace('.', ',')}`;
-    case 'percent':
-      return `${(parseFloat(value) * 100).toFixed(1)}%`;
-    case 'decimal':
-      return parseFloat(value).toFixed(2);
-    default:
-      return value;
+  let labels = [];
+  let chartData = [];
+
+  if (dataset === 'tempo_resolucao_hrs_por_prioridade') {
+    // Média do tempo_resolucao_hrs por prioridade
+    const grupos = {};
+    data.forEach(item => {
+      const prioridade = item.prioridade;
+      const tempo = item.tempo_resolucao_hrs;
+      if (!grupos[prioridade]) grupos[prioridade] = { soma: 0, count: 0 };
+      grupos[prioridade].soma += tempo;
+      grupos[prioridade].count += 1;
+    });
+    labels = Object.keys(grupos);
+    chartData = labels.map(prio => Number((grupos[prio].soma / grupos[prio].count).toFixed(2)));
+
+  } else if (dataset === 'contagem_por_cliente') {
+    // Contagem de atendimentos por cliente
+    const grupos = {};
+    data.forEach(item => {
+      const cliente = item.cliente;
+      grupos[cliente] = (grupos[cliente] || 0) + 1;
+    });
+    labels = Object.keys(grupos);
+    chartData = labels.map(cliente => grupos[cliente]);
+
+  } else if (dataset === 'media_interacoes_por_servico') {
+    // Média de interações por serviço
+    const grupos = {};
+    data.forEach(item => {
+      const servico = item.servico;
+      const interacoes = item.interacoes;
+      if (!grupos[servico]) grupos[servico] = { soma: 0, count: 0 };
+      grupos[servico].soma += interacoes;
+      grupos[servico].count += 1;
+    });
+    labels = Object.keys(grupos);
+    chartData = labels.map(servico => Number((grupos[servico].soma / grupos[servico].count).toFixed(2)));
+
+  } else if (dataset === 'media_tempo_fechamento_por_prioridade') {
+    // Média do tempo_fechamento_hrs por prioridade
+    const grupos = {};
+    data.forEach(item => {
+      const prioridade = item.prioridade;
+      const tempo = item.tempo_fechamento_hrs;
+      if (!grupos[prioridade]) grupos[prioridade] = { soma: 0, count: 0 };
+      grupos[prioridade].soma += tempo;
+      grupos[prioridade].count += 1;
+    });
+    labels = Object.keys(grupos);
+    chartData = labels.map(prio => Number((grupos[prio].soma / grupos[prio].count).toFixed(2)));
+
+  } else if (dataset === 'contagem_atendimentos_por_atendente') {
+    // Contagem de atendimentos por atendente
+    const grupos = {};
+    data.forEach(item => {
+      const atendente = item.atendente;
+      grupos[atendente] = (grupos[atendente] || 0) + 1;
+    });
+    labels = Object.keys(grupos);
+    chartData = labels.map(atendente => grupos[atendente]);
+
+  } else if (dataset === 'media_tempo_inicio_por_prioridade') {
+    // Média do tempo_inicio_hrs por prioridade
+    const grupos = {};
+    data.forEach(item => {
+      const prioridade = item.prioridade;
+      const tempo = item.tempo_inicio_hrs;
+      if (!grupos[prioridade]) grupos[prioridade] = { soma: 0, count: 0 };
+      grupos[prioridade].soma += tempo;
+      grupos[prioridade].count += 1;
+    });
+    labels = Object.keys(grupos);
+    chartData = labels.map(prio => Number((grupos[prio].soma / grupos[prio].count).toFixed(2)));
+
+  } else if (dataset === 'media_nota_por_prioridade') {
+    // Média da nota por prioridade
+    // Nota pode ser 'Excelente', 'Regular', etc, vamos converter em números pra gráfico:
+    const valorNota = { 'Excelente': 3, 'Bom': 2, 'Regular': 1, 'Ruim': 0 };
+    const grupos = {};
+    data.forEach(item => {
+      const prioridade = item.prioridade;
+      const nota = valorNota[item.nota] || 0;
+      if (!grupos[prioridade]) grupos[prioridade] = { soma: 0, count: 0 };
+      grupos[prioridade].soma += nota;
+      grupos[prioridade].count += 1;
+    });
+    labels = Object.keys(grupos);
+    chartData = labels.map(prio => Number((grupos[prio].soma / grupos[prio].count).toFixed(2)));
+
+  } else if (dataset === 'total_interacoes_por_cliente') {
+    // Soma total de interações por cliente
+    const grupos = {};
+    data.forEach(item => {
+      const cliente = item.cliente;
+      grupos[cliente] = (grupos[cliente] || 0) + item.interacoes;
+    });
+    labels = Object.keys(grupos);
+    chartData = labels.map(cliente => grupos[cliente]);
+
+  } else {
+    // Dataset não reconhecido
+    return {
+      type: chartType,
+      data: {
+        labels: [],
+        datasets: [{
+          label: 'Nenhum dado disponível',
+          data: [],
+          backgroundColor: [],
+        }],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Dataset não reconhecido',
+          },
+        },
+      },
+    };
   }
-}
 
-exports.buildChartConfig = (data) => {
-  const {
-    chartType = 'bar',
-    labels = [],
-    datasets = [],
-    title = '',
-    format = null
-  } = data;
-
-  const finalDatasets = datasets.map((ds, i) => ({
-    ...ds,
-    backgroundColor: ds.backgroundColor || defaultColors[i % defaultColors.length],
-    borderColor: ds.borderColor || defaultColors[i % defaultColors.length],
-    fill: chartType === 'line' ? false : true
-  }));
+  const defaultColors = ['#4dc9f6', '#f67019', '#f53794', '#54f8ea', '#00a896', '#a05195'];
+  const backgroundColors = labels.map((_, i) => defaultColors[i % defaultColors.length]);
 
   return {
     type: chartType,
     data: {
       labels,
-      datasets: finalDatasets
+      datasets: [
+        {
+          label: title,
+          data: chartData,
+          backgroundColor: backgroundColors,
+        },
+      ],
     },
     options: {
       responsive: true,
       plugins: {
         title: {
-          display: !!title,
-          text: title
-        }
-      }
-    }
+          display: true,
+          text: title,
+        },
+      },
+    },
   };
-};
+}
+
+module.exports = { buildChartConfig };
+
