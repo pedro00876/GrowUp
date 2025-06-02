@@ -5,6 +5,7 @@ async function buildTableConfig(payload) {
 
   let rows = [];
 
+
   if (dataset === 'lista_atendimentos') {
     rows = data.map(item => ({
       codigo_atendimento: item.codigo_atendimento,
@@ -45,30 +46,30 @@ async function buildTableConfig(payload) {
     }));
 
   } else if (dataset === 'media_nota_por_prioridade') {
-  const notaMap = {
-    "Péssimo": 1,
-    "Ruim": 2,
-    "Regular": 3,
-    "Bom": 4,
-    "Ótimo": 5
-  };
+    const notaMap = {
+      "Péssimo": 1,
+      "Ruim": 2,
+      "Regular": 3,
+      "Bom": 4,
+      "Ótimo": 5
+    };
 
-  const grupos = {};
-  data.forEach(item => {
-    const prioridade = item.prioridade;
-    const notaNumerica = notaMap[item.nota];
+    const grupos = {};
+    data.forEach(item => {
+      const prioridade = item.prioridade;
+      const notaNumerica = notaMap[item.nota];
 
-    if (notaNumerica !== undefined) {
-      if (!grupos[prioridade]) grupos[prioridade] = { soma: 0, count: 0 };
-      grupos[prioridade].soma += notaNumerica;
-      grupos[prioridade].count += 1;
-    }
-  });
+      if (notaNumerica !== undefined) {
+        if (!grupos[prioridade]) grupos[prioridade] = { soma: 0, count: 0 };
+        grupos[prioridade].soma += notaNumerica;
+        grupos[prioridade].count += 1;
+      }
+    });
 
-  rows = Object.entries(grupos).map(([prioridade, stats]) => ({
-    prioridade,
-    media_nota: stats.count > 0 ? Number((stats.soma / stats.count).toFixed(2)) : 0,
-  }));
+    rows = Object.entries(grupos).map(([prioridade, stats]) => ({
+      prioridade,
+      media_nota: stats.count > 0 ? Number((stats.soma / stats.count).toFixed(2)) : 0,
+    }));
 
   } else if (dataset === 'tempo_total_resolucao_por_cliente') {
     const grupos = {};
@@ -104,32 +105,32 @@ async function buildTableConfig(payload) {
     }));
 
   } else if (dataset === 'nota_media_por_servico') {
-  const notaMap = {
-    "Péssimo": 1,
-    "Ruim": 2,
-    "Regular": 3,
-    "Bom": 4,
-    "Ótimo": 5
-  };
+    const notaMap = {
+      "Péssimo": 1,
+      "Ruim": 2,
+      "Regular": 3,
+      "Bom": 4,
+      "Ótimo": 5
+    };
 
-  const grupos = {};
-  data.forEach(item => {
-    const servico = item.servico;
-    const notaNumerica = notaMap[item.nota];
+    const grupos = {};
+    data.forEach(item => {
+      const servico = item.servico;
+      const notaNumerica = notaMap[item.nota];
 
-    if (notaNumerica !== undefined) {
-      if (!grupos[servico]) grupos[servico] = { soma: 0, count: 0 };
-      grupos[servico].soma += notaNumerica;
-      grupos[servico].count += 1;
-    }
-  });
+      if (notaNumerica !== undefined) {
+        if (!grupos[servico]) grupos[servico] = { soma: 0, count: 0 };
+        grupos[servico].soma += notaNumerica;
+        grupos[servico].count += 1;
+      }
+    });
 
-  rows = Object.entries(grupos).map(([servico, stats]) => ({
-    servico,
-    media_nota: stats.count > 0 ? Number((stats.soma / stats.count).toFixed(2)) : 0,
-  }));
+    rows = Object.entries(grupos).map(([servico, stats]) => ({
+      servico,
+      media_nota: stats.count > 0 ? Number((stats.soma / stats.count).toFixed(2)) : 0,
+    }));
 
-} else {
+  } else {
     rows = [];
   }
 
