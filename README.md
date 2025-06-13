@@ -4,6 +4,8 @@ Projeto desenvolvido pela Squad 11 da Residência II, com o objetivo de criar um
 
 A proposta central foi desenvolver um sistema modularizado, componentizado e de fácil reaproveitamento, tanto no front-end quanto no back-end. O back-end foi estruturado como uma biblioteca reutilizável, permitindo que outros sistemas ou dashboards possam integrá-lo com facilidade.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 🎯 Objetivos
 
 ✅ Centralizar os dados da empresa em um único painel visual.
@@ -13,6 +15,8 @@ A proposta central foi desenvolver um sistema modularizado, componentizado e de 
 ✅ Desenvolver uma arquitetura escalável, com foco em reutilização de componentes e módulos.
 
 ✅ Utilizar dados simulados com JSON Server para representar cenários reais.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🚀 Tecnologias Utilizadas
 
@@ -28,6 +32,8 @@ Express.js Framework para construção de APIs de forma rápida e eficiente.
 
 JSON Server Simula um banco de dados com um arquivo .json contendo dados mockados, facilitando o desenvolvimento e testes.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 🔄 Reutilização
 
 Uma das premissas do projeto foi a modularização. O back-end funciona como uma biblioteca genérica que pode ser integrada a qualquer front-end. Isso permite:
@@ -38,6 +44,8 @@ Uma das premissas do projeto foi a modularização. O back-end funciona como uma
 
 📈 Escalabilidade para múltiplas visualizações de dados.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 📦 Como Rodar o Projeto
 
 Clone o repositório git clone https://github.com/pedro00876/GrowUp.git \ cd dashboard-graficos-tabelas
@@ -45,6 +53,8 @@ Clone o repositório git clone https://github.com/pedro00876/GrowUp.git \ cd das
 Instale as dependências do Front-end cd frontend npm install npm i chart.js datatables.net datatables.net-dt jquery react-chartjs-2 json-server
 
 Instale as dependências do Back-end cd ../backend npm install npm i body-parser cors express node-fetch
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 🚀 Execução do Projeto
 
