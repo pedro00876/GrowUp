@@ -10,14 +10,20 @@ https://github.com/pedro00876/GrowUp.git
 Desenvolver uma ferramenta 💻 que permita visualizar dados 📊 de forma clara, dinâmica e moderna, utilizando gráficos e tabelas com tecnologias atuais e de fácil manutenção 🚀.
 
 🚀 Tecnologias Utilizadas
+
 💻 Frontend – React.js
+
 Chart.js 📊 – Gráficos dinâmicos
+
 
 react-chartjs-2 🔁
 
+
 DataTables 📋 – Tabelas interativas
 
+
 faker-js/faker 🧪 – Geração de dados fictícios
+
 
 react-rnd 🎯 – Componentes arrastáveis/redimensionáveis
 
@@ -26,6 +32,7 @@ jquery 🔧
 json-server 🖥️ – API fake para simulação
 
 🌐 Backend – Node.js
+
 express ⚙️
 
 cors 🌍
@@ -34,7 +41,9 @@ body-parser 🧩
 
 node-fetch 🔗
 
+
 📦 Instalação
+
 1️⃣ Clone o repositório
 
 git clone https://github.com/pedro00876/GrowUp.git
@@ -42,6 +51,7 @@ cd GrowUp
 
 
 2️⃣ Instale as dependências
+
 🧪 Frontend
 
 cd frontend
@@ -70,9 +80,6 @@ npm run server
 
 Abra um novo terminal, vá até a pasta backend e execute:
 
-bash
-Copiar
-Editar
 node app.js
 
 
@@ -80,9 +87,6 @@ node app.js
 
 Abra outro terminal, dentro da pasta frontend, execute:
 
-bash
-Copiar
-Editar
 npm run dev
 
 🌐 A aplicação estará disponível em: http://localhost:3000
@@ -90,9 +94,13 @@ npm run dev
 ✨ Funcionalidades
 
 ✅ Gráficos interativos com Chart.js
+
 ✅ Tabelas com paginação e ordenação usando DataTables
+
 ✅ Geração de dados de teste com faker.js
+
 ✅ Simulação de API com json-server
+
 ✅ Interface moderna, responsiva e modular com React.js
 
 
