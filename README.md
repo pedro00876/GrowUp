@@ -27,47 +27,34 @@ react-chartjs-2, react-rnd, jquery
 
 📦 Instalação
 1. Clone o repositório
-bash
-Copiar
-Editar
+
 git clone https://github.com/pedro00876/GrowUp.git
 cd GrowUp
 2. Instale as dependências
 Frontend
-bash
-Copiar
-Editar
+
 cd frontend
 npm install faker-js/faker chart.js datatables.net jquery react-chartjs-2 react-rnd json-server
 Backend
-bash
-Copiar
-Editar
+
 cd ../backend
 npm install body-parser cors express node-fetch
 ▶️ Como Usar
 1. Inicie o json-server (Simulador de API)
 No terminal, dentro da pasta frontend, execute:
 
-bash
-Copiar
-Editar
+
 npm run server
 Isso iniciará o json-server na porta 3001, simulando uma API REST baseada no arquivo db.json.
 
 2. Inicie o Backend
 Abra um novo terminal, vá para a pasta backend e execute:
 
-bash
-Copiar
-Editar
+
 node app.js
 3. Inicie o Frontend
 Em outro terminal (ou aba), dentro da pasta frontend, rode:
 
-bash
-Copiar
-Editar
 npm run dev
 O frontend será iniciado em: http://localhost:3000
 
