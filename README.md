@@ -144,5 +144,6 @@ npm run dev
 
 🤝 Contribuições
 Contribuições são super bem-vindas! 💡
+
 Sinta-se à vontade para abrir issues, enviar pull requests ou sugerir melhorias diretamente no repositório.
 
