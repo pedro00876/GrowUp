@@ -36,25 +36,26 @@ node-fetch 🔗
 
 📦 Instalação
 1️⃣ Clone o repositório
-bash
-Copiar
-Editar
+
 git clone https://github.com/pedro00876/GrowUp.git
 cd GrowUp
+
+
 2️⃣ Instale as dependências
 🧪 Frontend
-bash
-Copiar
-Editar
+
 cd frontend
 npm install faker-js/faker chart.js datatables.net jquery react-chartjs-2 react-rnd json-server
+
+
 🛠️ Backend
-bash
-Copiar
-Editar
+
 cd ../backend
 npm install body-parser cors express node-fetch
+
+
 ▶️ Como Usar
+
 🟡 1. Inicie o json-server (Simulação de API)
 No terminal, dentro da pasta frontend, execute:
 
@@ -64,28 +65,36 @@ Editar
 npm run server
 📝 O json-server será iniciado na porta 3001, utilizando o arquivo db.json.
 
+
 🟢 2. Inicie o Backend
+
 Abra um novo terminal, vá até a pasta backend e execute:
 
 bash
 Copiar
 Editar
 node app.js
+
+
 🔵 3. Inicie o Frontend
+
 Abra outro terminal, dentro da pasta frontend, execute:
 
 bash
 Copiar
 Editar
 npm run dev
+
 🌐 A aplicação estará disponível em: http://localhost:3000
 
 ✨ Funcionalidades
+
 ✅ Gráficos interativos com Chart.js
 ✅ Tabelas com paginação e ordenação usando DataTables
 ✅ Geração de dados de teste com faker.js
 ✅ Simulação de API com json-server
 ✅ Interface moderna, responsiva e modular com React.js
+
 
 🤝 Contribuições
 Contribuições são super bem-vindas! 💡
