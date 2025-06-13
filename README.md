@@ -49,14 +49,20 @@ Uma das premissas do projeto foi a modularização. O back-end funciona como uma
 📦 Como Rodar o Projeto
 
 Clone o repositório 
+
 git clone https://github.com/pedro00876/GrowUp.git 
+
 cd dashboard-graficos-tabelas
 
 Instale as dependências do Front-end 
+
 cd frontend npm install npm i chart.js datatables.net datatables.net-dt jquery react-chartjs-2 json-server
 
 Instale as dependências do Back-end 
-cd ../backend npm install npm i body-parser cors express node-fetch
+
+cd ../backend 
+
+npm install npm i body-parser cors express node-fetch
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -72,13 +78,17 @@ Esse comando executa o json-server, que usa o arquivo db.json como base de dados
 ✅ Rodar o Back-end (Node + Express)
 
 cd ../backend 
+
 node app.js 
+
 Inicia o servidor Node.js responsável por servir os dados de forma modularizada.
 
 ✅ Rodar o Front-end (React + Vite)
 
 cd ../frontend 
+
 npm run dev 
+
 Inicia a aplicação React, que se conecta tanto ao JSON Server quanto ao back-end Express para exibir os dados.
 
 ✅ Após esses passos:
