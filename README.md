@@ -70,6 +70,7 @@ node-fetch 🔗
 1️⃣ Clone o repositório
 
 git clone https://github.com/pedro00876/GrowUp.git
+
 cd GrowUp
 
 
@@ -80,6 +81,7 @@ cd GrowUp
 🧪 Frontend
 
 cd frontend
+
 npm install faker-js/faker chart.js datatables.net jquery react-chartjs-2 react-rnd json-server
 
 
@@ -87,6 +89,7 @@ npm install faker-js/faker chart.js datatables.net jquery react-chartjs-2 react-
 🛠️ Backend
 
 cd ../backend
+
 npm install body-parser cors express node-fetch
 
 
@@ -98,9 +101,6 @@ npm install body-parser cors express node-fetch
 🟡 1. Inicie o json-server (Simulação de API)
 No terminal, dentro da pasta frontend, execute:
 
-bash
-Copiar
-Editar
 npm run server
 📝 O json-server será iniciado na porta 3001, utilizando o arquivo db.json.
 
