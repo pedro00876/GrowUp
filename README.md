@@ -3,15 +3,22 @@ Este projeto foi desenvolvido como parte da disciplina Residência II, com o obj
 
 O sistema centraliza e organiza dados em representações visuais, facilitando a análise por meio de gráficos 📈 e tabelas 📋 interativas.
 
+
 🔗 Repositório no GitHub:
 https://github.com/pedro00876/GrowUp.git
+
+
+
 
 🎯 Objetivo
 Desenvolver uma ferramenta 💻 que permita visualizar dados 📊 de forma clara, dinâmica e moderna, utilizando gráficos e tabelas com tecnologias atuais e de fácil manutenção 🚀.
 
+
 🚀 Tecnologias Utilizadas
 
+
 💻 Frontend – React.js
+
 
 Chart.js 📊 – Gráficos dinâmicos
 
@@ -27,22 +34,34 @@ faker-js/faker 🧪 – Geração de dados fictícios
 
 react-rnd 🎯 – Componentes arrastáveis/redimensionáveis
 
+
 jquery 🔧
+
 
 json-server 🖥️ – API fake para simulação
 
+
+
+
 🌐 Backend – Node.js
+
 
 express ⚙️
 
+
 cors 🌍
 
+
 body-parser 🧩
+
 
 node-fetch 🔗
 
 
+
+
 📦 Instalação
+
 
 1️⃣ Clone o repositório
 
@@ -50,7 +69,9 @@ git clone https://github.com/pedro00876/GrowUp.git
 cd GrowUp
 
 
+
 2️⃣ Instale as dependências
+
 
 🧪 Frontend
 
@@ -58,10 +79,13 @@ cd frontend
 npm install faker-js/faker chart.js datatables.net jquery react-chartjs-2 react-rnd json-server
 
 
+
 🛠️ Backend
 
 cd ../backend
 npm install body-parser cors express node-fetch
+
+
 
 
 ▶️ Como Usar
@@ -76,11 +100,13 @@ npm run server
 📝 O json-server será iniciado na porta 3001, utilizando o arquivo db.json.
 
 
+
 🟢 2. Inicie o Backend
 
 Abra um novo terminal, vá até a pasta backend e execute:
 
 node app.js
+
 
 
 🔵 3. Inicie o Frontend
@@ -89,7 +115,11 @@ Abra outro terminal, dentro da pasta frontend, execute:
 
 npm run dev
 
+
+
 🌐 A aplicação estará disponível em: http://localhost:3000
+
+
 
 ✨ Funcionalidades
 
@@ -102,6 +132,9 @@ npm run dev
 ✅ Simulação de API com json-server
 
 ✅ Interface moderna, responsiva e modular com React.js
+
+
+
 
 
 🤝 Contribuições
