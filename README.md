@@ -1,70 +1,74 @@
 📊 Biblioteca de Gráficos e Tabelas – ITP Soluções
-Este projeto foi desenvolvido como parte da disciplina Residência II, com o objetivo de criar uma biblioteca de gráficos e tabelas para a empresa ITP Soluções. O sistema centraliza e organiza dados em representações visuais, facilitando a análise por meio de gráficos e tabelas interativas.
+Este projeto foi desenvolvido como parte da disciplina Residência II, com o objetivo de criar uma biblioteca de gráficos e tabelas para a empresa ITP Soluções. O sistema centraliza e organiza dados em representações visuais, facilitando a análise por meio de gráficos 📈 e tabelas 📋 interativas.
 
 🔗 Repositório no GitHub: https://github.com/pedro00876/GrowUp.git
 
 🎯 Objetivo
-Desenvolver uma ferramenta que permita visualizar dados de forma clara e dinâmica, utilizando gráficos e tabelas integradas, com tecnologias modernas e de fácil manutenção.
+Desenvolver uma ferramenta 💻 que permita visualizar dados 📊 de forma clara, dinâmica e moderna, utilizando gráficos e tabelas com tecnologias atuais e de fácil manutenção 🚀.
 
 🚀 Tecnologias Utilizadas
-Frontend: React.js
-→ Modularização e componentização da interface.
+💻 Frontend – React.js
+Chart.js 📊 – Gráficos dinâmicos
 
-Backend: Node.js
-→ Gerenciamento da lógica e estrutura da biblioteca.
+react-chartjs-2 🔁
 
-Bibliotecas e Ferramentas
+DataTables 📋 – Tabelas interativas
 
-Chart.js – Gráficos dinâmicos
+faker-js/faker 🧪 – Geração de dados fictícios
 
-DataTables – Tabelas com ordenação e paginação
+react-rnd 🎯 – Componentes arrastáveis/redimensionáveis
 
-faker-js/faker – Geração de dados fictícios para testes
+jquery 🔧
 
-json-server – Simulação de API REST fake
+json-server 🖥️ – API fake para simulação
 
-react-chartjs-2, react-rnd, jquery
+🌐 Backend – Node.js
+express ⚙️
+
+cors 🌍
+
+body-parser 🧩
+
+node-fetch 🔗
 
 📦 Instalação
-1. Clone o repositório
+1️⃣ Clone o repositório
 
 git clone https://github.com/pedro00876/GrowUp.git
 cd GrowUp
-2. Instale as dependências
-Frontend
+2️⃣ Instale as dependências
+🧪 Frontend
 
 cd frontend
 npm install faker-js/faker chart.js datatables.net jquery react-chartjs-2 react-rnd json-server
-Backend
+🛠️ Backend
 
 cd ../backend
 npm install body-parser cors express node-fetch
 ▶️ Como Usar
-1. Inicie o json-server (Simulador de API)
+🟡 1. Inicie o json-server (simulação de API)
 No terminal, dentro da pasta frontend, execute:
 
-
 npm run server
-Isso iniciará o json-server na porta 3001, simulando uma API REST baseada no arquivo db.json.
+🚨 O json-server será iniciado na porta 3001, usando o arquivo db.json.
 
-2. Inicie o Backend
-Abra um novo terminal, vá para a pasta backend e execute:
-
+🟢 2. Inicie o Backend
+Em um novo terminal, vá até a pasta backend:
 
 node app.js
-3. Inicie o Frontend
-Em outro terminal (ou aba), dentro da pasta frontend, rode:
+🔵 3. Inicie o Frontend
+Ainda em outro terminal, dentro da pasta frontend:
 
 npm run dev
-O frontend será iniciado em: http://localhost:3000
+🌐 A aplicação estará disponível em: http://localhost:3000
 
-📈 Funcionalidades
-Gráficos interativos com Chart.js
+✨ Funcionalidades
+✅ Gráficos interativos com Chart.js
+✅ Tabelas com paginação e ordenação usando DataTables
+✅ Geração de dados de teste com faker.js
+✅ Simulação de API com json-server
+✅ Interface moderna, responsiva e modular com React.js
 
-Tabelas dinâmicas com DataTables
-
-Geração automática de dados com faker.js
-
-Simulação de API com json-server
-
-Layout responsivo e modular com React.js
+🤝 Contribuições
+Contribuições são super bem-vindas! 💡
+Sinta-se à vontade para abrir issues, enviar pull requests ou sugerir melhorias diretamente no repositório.
