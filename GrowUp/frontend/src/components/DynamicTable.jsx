@@ -1,18 +1,18 @@
-import { useEffect, useRef } from 'react';
-import $ from 'jquery';
-import 'datatables.net';
+import { useEffect, useRef } from "react";
+import $ from "jquery";
+import "datatables.net";
 
 export default function DynamicTable() {
   const tableRef = useRef();
-  const dataset = "lista_atendimentos"
+  const dataset = "lista_atendimentos";
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('http://localhost:4000/render', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("http://localhost:4000/render", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          type: 'table',
+          type: "table",
           dataset: dataset,
         }),
       });
@@ -25,8 +25,8 @@ export default function DynamicTable() {
       }
 
       if (result.data.length > 0) {
-        const columns = Object.keys(result.data[0]).map(key => ({
-          title: key.replace(/_/g, ' ').toUpperCase(),
+        const columns = Object.keys(result.data[0]).map((key) => ({
+          title: key.replace(/_/g, " ").toUpperCase(),
           data: key,
         }));
 
@@ -40,5 +40,5 @@ export default function DynamicTable() {
     fetchData();
   }, [dataset]);
 
-  return <table ref={tableRef} className="display" style={{ width: '100%' }} />;
+  return <table ref={tableRef} className="display" style={{ width: "100%" }} />;
 }

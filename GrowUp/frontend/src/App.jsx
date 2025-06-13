@@ -2,16 +2,18 @@ import "./App.css";
 
 //Componentes
 import ChartFromAPI from "./components/ChartFromAPI";
+import ChartTest from "./components/ChartTest";
 import DynamicTable from "./components/DynamicTable";
-// import ChartComponent from "./components/ChartComponent";
+import ChartApresentacao from "./components/ChartApresentacao";
 
 function App() {
   return (
     <div className="App">
       <h1>GrowUp</h1>
-      {/* <ChartComponent /> */}
+      <ChartTest />
       <ChartFromAPI />
       <DynamicTable />
+      <ChartApresentacao />
     </div>
   );
 }

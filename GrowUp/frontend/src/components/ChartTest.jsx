@@ -57,7 +57,7 @@ const ChartFromBackend = () => {
           },
           body: JSON.stringify({
             type: "chart",
-            chartType: "doughnut", // pode mudar dinamicamente aqui, ou enviar vazio
+            chartType: "line", // pode mudar dinamicamente aqui, ou enviar vazio
             title: "Tempo de resolução dos atendimentos",
             dataset: "tempo_resolucao_hrs_por_prioridade",
           }),
